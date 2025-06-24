@@ -36,7 +36,7 @@ body {
 }
     /*Reglas para modo oscuro cuando este activo*/
 @media (prefers-color-scheme: dark) {
-    
+
     .logo-container .logo-light {
         display: none;
         opacity: 0;
@@ -105,32 +105,85 @@ section p {
     color: #374151;
 }
 
-.btn-download {
-    display: inline-block;
-    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: #4CAF50;
     color: white;
-    padding: 12px 24px;
-    font-weight: 600;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 4px12px rgba(59, 130, 246, 0.4);
-    transition: background 0.3s ease, transform 0.2s ease;
-    user-select: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.btn-download:hover,
-.btn-download:focus {
-    background: linear-gradient(135deg, #4338ca, #2563eb);
-    outline: none;
-    transform: translatey(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+.notification.show {
+    opacity: 1;
 }
+
+.download-confirm {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+}
+
+
+.btn-download {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-download:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .btn-download:active {
     transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(59, 130,246,0.4);
+}
+
+.btn-download::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: cale(1, 1) translate(-50%, -50%);
+}
+
+.btn-download:focus:not(:active)::after {
+    animation:ripple 1s ease-out
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
 }
 
 footer p {

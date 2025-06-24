@@ -10,6 +10,8 @@
     <title>Avisos Legales - Aviso de Privacidad, Confidencialidad y Reglamento Interno</title>
 </head>
 <body>
+    <div id="downloadNotification" class="download-confirm"></div>
+    
     <header role="banner">
         <div class="container">
             <div class="logo-container">
@@ -27,7 +29,7 @@
         <h2 id="aviso-privacidad-tittle">Aviso de Privacidad</h2>
         <p>Aqui se explica cómo recópilamos, usamos y protejemos tus datos personales. 
         Nos Comprometemos a garantizar la privacidad y seguridad de tu informacion conforme a la legislación</p>
-        <a href="/lib/docs/Aviso de privacidad.pdf" class="btn-download"  aria-label="Descargar Aviso de Privacidad en PDF">Descargar PDF</a>
+        <button onclick="downloadPDF('Aviso de Privacidad', '/lib/docs/Aviso de privacidad.pdf')" class="btn-download">Descargar PDF</button>
     </section>
     <section tabindex="0" aria-labelledby="aviso-confidencialidad-title" id="aviso-confidencialidad">
         <h2 id="aviso-confidencialidad-title">Aviso de Confidencialidad</h2>
@@ -35,14 +37,14 @@
             La información contenida en este sitio es confidencial y está destinada exclusivamente para quienes tienen autorización para accederla. 
             Queda prohibida la divulgación no autorizada.
         </p>
-        <a href="/lib/docs/Aviso de confidencialidad.pdf" class="btn-download" aria-label="Descargar Aviso de Confidencialidad en PDF"> Descargar PDF</a>
+        <button onclick="downloadPDF('Aviso de Confidencialidad', '/lib/docs/Aviso de confidencialidad.pdf')" class="btn-download"> Descargar PDF</button>
     </section>
     <section tabindex="0" aria-labelledby="reglamento-interno-title" id="reglamento-interno">
         <h2 id="reglamento-interno-title">Reglamento Interno</h2>
         <p>
             El reglamento interno establece las normas y procedimientos que deben seguir todos los integrantes de la organización para asegurar un ambiente de trabajo armonioso y productivo.
         </p>
-        <a href="/lib/docs/REGLAMENTO INTERIOR MAROMA.pdf" class="btn-download" aria-label="Descargar Reglamento Interno en PDF"> Descargar PDF</a>
+        <button onclick="downloadPDF('Reglamento Interno', '/lib/docs/REGLAMENTO INTERIOR MAROMA.pdf')" class="btn-download"> Descargar PDF</button>
     </section>
 </main>
 <footer role="contentinfo">
