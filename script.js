@@ -19,7 +19,7 @@ async function downloadPDF(documentName, filePath, button) {
         link.click();
         document.body.removeChild(link);
         
-        animateButton(button); // Asegúrate de pasar el botón correcto
+        animateButton(button);
     } catch (error) {
         showNotification(`Error al descargar ${documentName}`, 5000);
         console.error('Error al descargar:', error);
