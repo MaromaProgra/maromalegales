@@ -120,6 +120,7 @@ section p {
 }
 
 .notification.show {
+    display: block;
     opacity: 1;
 }
 
