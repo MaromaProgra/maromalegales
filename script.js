@@ -24,7 +24,7 @@ async function downloadPDF(documentName, filePath) {
     document.body.removeChild(link);
     
     //boton animacion
-    animateButton(event.target);
+    animateButton(event.button);
   } catch (error) {
     showNotification(`Error al descargar ${documentName}`, 5000);
     console.error('Error al descargar:', error);
@@ -44,7 +44,7 @@ function handleThemeChange() {
   const logoLight = document.querySelector(`.logo-light`);
   const logoDark = document.querySelector(`.logo-dark`);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     //Modo obscuro
     logoLight.style.display = 'none';
     logoLight.style.opacity = '0';
